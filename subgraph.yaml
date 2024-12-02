@@ -1,4 +1,6 @@
 specVersion: 1.0.0
+description: Subgraph for testing storage
+repository: https://github.com/FrogyPogy/mySubgraph
 indexerHints:
   prune: auto
 schema:
@@ -6,7 +8,7 @@ schema:
 dataSources:
   - kind: ethereum
     name: TestStorage
-    network: fantom
+    network: sonic
     source:
       address: "0x0045E06B1A2AaF86c7cE926d4f42e1f3f420c363"
       abi: TestStorage
