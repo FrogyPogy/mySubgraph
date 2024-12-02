@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: TestStorage
+    network: fantom
+    source:
+      address: "0x0045E06B1A2AaF86c7cE926d4f42e1f3f420c363"
+      abi: TestStorage
+      startBlock: 89577090
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ValueUpdated
+      abis:
+        - name: TestStorage
+          file: ./abis/TestStorage.json
+      eventHandlers:
+        - event: ValueUpdated(uint256,uint256)
+          handler: handleValueUpdated
+      file: ./src/test-storage.ts
